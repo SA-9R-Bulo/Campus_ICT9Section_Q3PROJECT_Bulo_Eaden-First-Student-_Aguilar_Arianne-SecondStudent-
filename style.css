@@ -127,8 +127,8 @@ th, td {
 
 
 tbody tr:hover {
-    transform: scale(1.02); /* Slightly scale up the row */
-    transition: transform 0.2s ease-in-out; /* Smooth transition */
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out; 
 }
 
 
