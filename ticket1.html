@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>North Ave</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #c92100;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img id="logo" src="https://cdn.pixabay.com/photo/2016/08/12/00/50/railroad-1587328_1280.png" alt="Logo">
+    </a>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="guide.html">Fare Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="schedule.html">Schedule</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="tips.html">Help</a>
+        </li>
+        
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex" action="index.html">
+        <input class="form-control" type="text" placeholder="Search…">
+        <button class="btn btn-warning" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d123537.69083138154!2d121.0412805!3d14.6245306!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7034c40f973%3A0x47d3b63022cd1c69!2sNorth%20Ave%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1739836825776!5m2!1sen!2sph" width="1519" height="720" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+    
+        
+      </div>
+ <div class="row">
+      <div class="col-md-6" >
+          <div class=" form-group" id="station">
+          
+          <span id="station-label" class="text-center" ><label for="leavingFrom" >LEAVING FROM:</label></span>
+            <br>
+            <center>
+              <select class="form-control" id="leavingFrom">
+                <option value="0">Choose a station...</option>
+                <option value="13">Quezon Ave.</option>
+                <option value="13">GMA-Kamuning</option>
+                <option value="11">Araneta Cubao</option>
+                <option value="11">Santos Annapolis</option>
+                <option value="11">Ortigas</option>
+                <option value="8">Shaw Blvd.</option>
+                <option value="8">Boni</option>
+                <option value="7">Guadalupe</option>
+                <option value="7">Buendia</option>
+                <option value="7">Ayala</option>
+                <option value="5">Magallanes</option>
+                <option value="5">Taft</option>
+              </select>
+            <br>
+          <span id="station-label"><label for="goingTo">GOING TO:</label></span>
+            <br>
+              <select class="form-control" id="goingTo">
+                <option value="0">Choose an option...</option>
+                <option value="13">North Ave.</option>
+                
+              </select>
+              
+              <button onclick="calculateFare()" class="btn btn-outline-success" id="compute">Regular Fare</button>
+              <button onclick="discountFare()" class="btn btn-outline-primary" id="compute">Discounted Fare</button>
+              <br>
+              <br>
+              <button  class="btn btn-outline-success" onclick="alert('Purchased!')">Buy Ticket</button>
+             <img id="card" src="https://mrt3.com/images/SINGLE.png">
+      </div>
+
+     </div>
+
+      <div class="col-md-6" style="background-color: #04175c; color: white; height: 350px; width: 650px;">
+        <script>  
+        document.write("<h2>Ticket Price:</h2>");
+        </script>
+
+        <br><br>
+        <center>
+            <br>
+            <p id="DisplayAns"></p>
+        </center>
+        <script>
+          //compute for regular rate
+        function calculateFare(){
+          let leavingFrom, goingTo, basefare, distance, fare;
+          leavingFrom = document.getElementById("leavingFrom").value;
+          goingTo = document.getElementById("goingTo").value;
+          basefare = 16;
+          distance = goingTo - leavingFrom;
+          fare = distance + basefare; 
+          
+          //display answer in a paragraph element
+          document.getElementById("DisplayAns").innerHTML = fare + ".00";
+    }
+          //compute for discounted rate
+        function discountFare(){
+          let leavingFrom, goingTo, basefare, distance, disc_fare, fare;
+          leavingFrom = document.getElementById("leavingFrom").value;
+          goingTo = document.getElementById("goingTo").value;
+          basefare = 16;
+          distance = goingTo - leavingFrom;
+          disc_fare = .80 * (distance + basefare) ; 
+          fare = disc_fare.toFixed(2);
+          
+          //display answer in a paragraph element
+          document.getElementById("DisplayAns").innerHTML = fare;
+    }
+      </script>
+        
+
+</div>
+</div>
+
+
+
+
+</body>
+</html>
