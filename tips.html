@@ -84,22 +84,20 @@
 <div class="form-container">
   <center>
     <h2>Fill Out This Form For Any Questions</h2>
-      <form id="helpForm" >
+<form id="helpForm">
+    <br>
+    <label>Name</label> 
+    <input type="text" id="name" class="form-control" required> 
+    <br>
+    <label>Email</label> 
+    <input type="email" id="email" class="form-control" required> 
+    <br>
+    <label>Question or Feedback</label> 
+    <textarea id="Feedback" class="form-control" rows="4" required></textarea>
+    <br>   
+    <button type="button" class="btn btn-danger" onclick="info()">SUBMIT</button>
+</form>
 
-              <br>
-                <label>Name</label> 
-                    <input type="text" id="name" class="form-control" required> 
-              <br>
-                <label>Email</label> 
-                    <input type="email" id="email" class="form-control" required> 
-
-              <br>
-                <label>Question or Feedback</label> 
-                    <textarea type="form" id="feedback" class="form-control" rows="4" required></textarea> 
-
-              <br>   
-              <button type="button" class="btn btn-danger" onclick="info()"> SUBMIT</button>
-        </form>
   </center>
 </div>
 </div>
@@ -108,9 +106,9 @@
 function info() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
-    var feedback = document.getElementById('Feedback').value;
+    var Feedback = document.getElementById('Feedback').value;
 
-    if (name === "" || email === "" || feedback === "") {
+    if (name === "" || email === "" || Feedback === "") {
         window.alert('Please fill in all fields: Name, Email, and Question.');
     } else {
         window.alert('Received. A response will be sent to your email. Thank you!');
