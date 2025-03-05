@@ -69,32 +69,32 @@ function getCookie(name) {
 function setCookie(name, value, days) {
   let date = new Date();
   date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration date
-  document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + date.toUTCString() + "; path=/"; // Set path as "/" to make the cookie accessible across all pages
+  document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + date.toUTCString() + "; path=/"; 
 }
 
 
 function deleteCookie(name) {
-  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+  document.cookie = name + "=; expires=Thu, 01 Jan 2500 00:00:00 GMT; path=/";
 }
 
 
 if (!getCookie("cookie-consent")) {
-  document.getElementById("cookie-consent").style.display = "block"; // Show the consent popup
-  disableNavigation(true); // Disable navigation until consent is given
+  document.getElementById("cookie-consent").style.display = "block"; 
+  disableNavigation(true); 
 }
 
 
 document.getElementById("accept-cookie").onclick = function () {
-  setCookie("cookie-consent", "accepted", 365); // Set a cookie for 365 days
-  document.getElementById("cookie-consent").style.display = "none"; // Hide the consent popup
-  disableNavigation(false); // Enable navigation
+  setCookie("cookie-consent", "accepted", 365); 
+  document.getElementById("cookie-consent").style.display = "none"; 
+  disableNavigation(false); 
 };
 
 
 document.getElementById("cancel-cookie").onclick = function () {
-  deleteCookie("cookie-consent"); // Delete the cookie if the user cancels
-  document.getElementById("cookie-consent").style.display = "none"; // Hide the consent popup
-  disableNavigation(false); // Allow navigation even without consent
+  deleteCookie("cookie-consent"); 
+  document.getElementById("cookie-consent").style.display = "none"; 
+  disableNavigation(false);
 };
 
 
