@@ -26,7 +26,7 @@ height: 200px;
 
         body {background-color:   #a0a0a0;}
 
-
+/*Styling for table  */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -44,7 +44,7 @@ tr:nth-child(even) {
 }
 
 
-
+/*style for navbar  */
 
      .navbar {
       background-color: #c92100;
@@ -74,6 +74,8 @@ tr:nth-child(even) {
             padding: 50px 0;
         }
 
+
+/*style for link border  */
         .border-box {
             width: 600px;
             margin: 20px 0;
@@ -136,7 +138,7 @@ tbody tr:hover {
 
 
 
-
+/* style for navbar*/
     .navbar-nav .nav-item:not {
       margin-right: 15px; 
     }
@@ -146,7 +148,7 @@ tbody tr:hover {
       opacity: 0.5; 
     }
 
-    /* Search bar styling */
+    
     .navbar form input {
       border-radius: 20px;
       border: 2px solid #ccc;
