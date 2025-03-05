@@ -95,7 +95,7 @@
 
               <br>
                 <label>Question or Feedback</label> 
-                    <textarea type="form" id="Feedback" class="form-control" rows="4" required></textarea> 
+                    <textarea type="form" id="feedback" class="form-control" rows="4" required></textarea> 
 
               <br>   
               <button type="button" class="btn btn-danger" onclick="info()"> SUBMIT</button>
@@ -105,18 +105,19 @@
 </div>
 <script>
 
-        function info(){
-        var name = document.getElementById('userName').value;
-        var email = document.getElementById('userEmail').value;
-        var Feedback = document.getElementById('feedBack').value;
+function info() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var feedback = document.getElementById('Feedback').value;
 
-	if (userName === "" || userEmail === "" || feedBack === "") {
-            window.alert('Please fill in all fields: Name, Email, and Question.');
-          } else { window.alert('Received. A response will be sent to your email. Thank you!');
-        
-            document.getElementById('helpForm').reset();
-          }
-        }
+    if (name === "" || email === "" || feedback === "") {
+        window.alert('Please fill in all fields: Name, Email, and Question.');
+    } else {
+        window.alert('Received. A response will be sent to your email. Thank you!');
+        document.getElementById('helpForm').reset();
+    }
+}
+
 		
 
 
