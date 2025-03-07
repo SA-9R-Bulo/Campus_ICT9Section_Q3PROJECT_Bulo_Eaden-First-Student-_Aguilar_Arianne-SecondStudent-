@@ -8,10 +8,11 @@ img {width: 60px}
 #DisplayAns {font-size: 100px}
 
 }
-        label, #leavingFrom, #goingTo{
+
+
+label, #leavingFrom, #goingTo{
           width: 300px;
         }
-
 
  #card { width:200px;
 
@@ -24,7 +25,7 @@ height: 200px;
         
 
 
-        body {background-color:   #a0a0a0;}
+ body {background-color:   #a0a0a0;}
 
 /*Styling for table  */
 table {
